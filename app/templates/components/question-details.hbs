@@ -1,0 +1,16 @@
+<h2 class="question">{{currentQuestion.id}}. {{{currentQuestion.question}}}</h2>
+{{#each currentQuestion.answers as |answer|}}
+  {{#radio-button
+      value=answer
+      groupValue=currentQuestion.answer.answer}}
+    <span class="answer-option">{{{answer}}}</span>
+  {{/radio-button}}
+  <br>
+{{/each}}
+<hr>
+<div class="pull-left">
+  {{#if currentQuestion}}
+    <a class="btn btn-primary" {{action 'nextAction'}}>Next</a>
+  {{/if}}
+</div>
+<div class="pull-right">{{count}}s</div>

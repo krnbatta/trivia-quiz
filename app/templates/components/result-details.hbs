@@ -1,0 +1,4 @@
+<h2>{{if timeUp "Time Up!" "Quiz Over"}}</h2>
+<h4>Congratulations {{user.name}}</h4>
+<h6>You got {{user.score}}/20 answers right!</h6>
+<a class="btn btn-primary" {{action 'startOver'}}>Start Over</a>

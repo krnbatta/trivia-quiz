@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="row card-wrapper">
+  <div class="card col-md-6 col-md-offset-3 text-center">
+    {{#if loginPage}}
+      {{user-details switchPage='switchPage'}}
+    {{/if}}
+    {{#if quizDetailsPage}}
+      {{quiz-details switchPage='switchPage'}}
+    {{/if}}
+    {{#if questionsPage}}
+      {{question-details switchPage='switchPage' timeUp=timeUp}}
+    {{/if}}
+    {{#if resultsPage}}
+      {{result-details timeUp=timeUp}}
+    {{/if}}
+  </div>
+</div>

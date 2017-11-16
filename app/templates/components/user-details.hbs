@@ -1,0 +1,32 @@
+<h2>Welcome to Trivia Quiz</h2>
+<div class="form">
+  <div class="row">
+    <div class="col-md-6">
+      <label>Name</label>
+    </div>
+    <div class="col-md-6">
+      {{input type="text" value=user.name class="form-control"}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label>Phone</label>
+    </div>
+    <div class="col-md-6">
+      {{input type="text" value=user.phone class="form-control"}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label>Email</label>
+    </div>
+    <div class="col-md-6">
+      {{input type="email" value=user.email class="form-control"}}
+    </div>
+  </div>
+</div>
+<hr>
+<h6>You have 60 seconds to answer as man questions as you can!</h6>
+<a class="btn btn-primary" {{action 'setQuiz'}}>Start Quiz</a>

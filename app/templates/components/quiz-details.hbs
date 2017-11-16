@@ -1,0 +1,48 @@
+{{#if loading}}
+  {{loading-spinner}}
+{{else}}
+  <h2>Please fill in the quiz details</h2>
+  <div class="form">
+    <div class="row">
+      <div class="col-md-6">
+        <label>Category</label>
+      </div>
+      <div class="col-md-6">
+        <select id="category" onchange= {{action "selectCategory" value="target.value"}} class="form-control">
+          {{#each categories as |category|}}
+            <option value={{category.id}}>{{category.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Difficulty</label>
+      </div>
+      <div class="col-md-6">
+        <select id="difficulty" onchange= {{action "selectCategory" value="target.value"}} class="form-control">
+          {{#each difficulties as |difficulty|}}
+            <option value={{difficulty.id}}>{{difficulty.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Type</label>
+      </div>
+      <div class="col-md-6">
+        <select id="quizType" onchange= {{action "selectCategory" value="target.value"}} class="form-control">
+          {{#each quizTypes as |quizType|}}
+            <option value={{quizType.id}}>{{quizType.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h6>You will be asked 20 questions!</h6>
+  <a class="btn btn-primary" {{action 'fetchQuestions'}}>Start Quiz</a>
+{{/if}}
